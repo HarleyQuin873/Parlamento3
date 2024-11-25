@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration 
+PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"C:\Users\PC\Documents\Librerie\hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+
+ <session-factory>
+
+<!-- Related to the connection START -->
+
+
+<property name="connection.driver_class">org.postgresql.Driver</property>
+
+<!-- // oracle.jdbc.driver.OracleDriver -->
+
+
+<property name="connection.url">jdbc:postgresql://localhost:5432/Parlamento</property>
+
+<property name="connection.user">postgres</property>
+
+<property name="connection.password">**********</property>
+
+<!-- Related to the connection END -->
+
+
+<!-- Related to hibernate properties START -->
+
+
+<property name="show_sql">true</property>
+
+<property name="dialet">org.hibernate.dialect.PostgreSQL10Dialect</property>
+
+<property name="hbm2ddl.auto">update</property>
+
+<!-- Related to hibernate properties END -->
+
+
+<!-- Related to mapping START src/main/resources/
+src/main/resources/-->
+
+<!-- 
+<mapping resource="src/main/resources/Parlamentare.hbm.xml"/>  
+ <mapping resource="src/main/resources/Range2.hbm.xml"/>
+ -->
+ <mapping class="com.giuggiola.entity.Parlamentare" />
+ <mapping class="com.giuggiola.entity.PK"/>
+ <mapping class="com.giuggiola.entity.Periodi_cariche"/>
+ <mapping class="com.giuggiola.entity.Range2PK"/>
+
+<!-- // Our mapping xml file name -->
+
+
+<!-- Related to the mapping END -->
+
+
+
+</session-factory>
+
+</hibernate-configuration>
+<!--  
+<persistence version="2.2"
+  xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+  http://xmlns.jcp.org/xml/ns/persistence/peristence_2_2.xsd"
+>
+-->
+ <!--  <persistence-unit name="jpa-tutorial"> 
+ <hibernate-configuration>
+    <session-factory>
+   <properties>
+      <property name="javax.persistence.jdbc.driver"
+                value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.url"
+                value="jdbc:postgresql://localhost:5436/Parlamento"/>
+      <property name="hibernate.dialect"
+                value="org.hibernate.dialect.PostgreSQLDialect"/>
+      <property name="javax.persistence.jdbc.user"
+                value="postgres"/>
+      <property name="javax.persistence.jdbc.password"
+                value="mrnpgl"/>
+      <property name="hibernate.show_sql"
+                value="true"/>
+      <property name="hibernate.format_sql"
+                value="true"/>
+                
+      <property name="hibernate.current_session_context_class">thread</property>
+   </properties>
+   <mapping resource="Event.hbm.xml"></mapping>
+    </session-factory>
+</hibernate-configuration>
+-->
+ <!--  </persistence-unit> 
+
+</persistence>
+-->
+<!--  
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5436/Parlamento</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="connection.password">mrnpgl</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL92Dialect</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <mapping class="javax.management.relation.Role"/>
+        <mapping class="com.giuggiola.demo.model.Parlamentari.Parlamentare"/>
+        <mapping class="com.giuggiola.demo.model.Parlamentari.Range2"/>
+    </session-factory>
+</hibernate-configuration>
+
+
+-->
+
+
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost/demo</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="connection.password"></property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+        <mapping class="net.javaguides.usermanagement.model.User"/>
+    </session-factory>   
+</hibernate-configuration> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <class name="com.giuggiola.entity.Parlamentare" table="parlamentari">
+
+        <id name="Order_ID" type="int" column="labOrder_ID">
+            <generator class="increment" /> 
+        </id>
+
+        <many-to-one name="TestID" class="core.classes.lab.TestDescription"
+            fetch="join">
+            <column name="TestID" not-null="true" />
+        </many-to-one>
+
+        <property name="OrderLocation" column="labOrder_Location"
+            type="string" />
+        <property name="OrderStatus" column="labOrder_Status" type="string" />
+        <property name="DueDate" column="labOrder_DueDate" type="java.util.Date" />
+        <property name="OrderPriority" column="labOrder_Priority"
+            type="int" />
+        <property name="OrderRemarks" column="labOrder_Remarks" type="string" />
+
+        <property name="OrderCreateDate" column="labOrder_CreateDate"
+            type="java.util.Date" />
+        <property name="OrderCreateUser" column="labOrder_CreateUser"
+            type="int" />
+        <property name="OrderLastUpdate" column="labOrder_LastUpdate"
+            type="java.util.Date" />
+        <property name="OrderLastUpdateUser" column="labOrder_LastUpdateUser"
+            type="int" />
+    </class> 
+ -->
+
+
+
+
+
+
+
+
+ 
