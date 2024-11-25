@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+<absolute-ordering>
+<welcome-file-list>
+  <welcome-file>index.html</welcome-file>
+   <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+     <welcome-file>default.html</welcome-file>
+      <welcome-file>default.htm</welcome-file>
+       <welcome-file>default.jsp</welcome-file>
+</welcome-file-list>
+
+</absolute-ordering>
+
+ <servlet>
+<servlet-name>Parlamento</servlet-name>
+<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Parlamento</servlet-name>
+<url-pattern>/</url-pattern> <!-- <url-pattern>*.jsp</url-pattern> -->
+</servlet-mapping> 
+
+<!--  
+
+<servlet>
+    <servlet-name>spring</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>spring</servlet-name>
+    <url-pattern>/</url-pattern>        
+</servlet-mapping>
+ -->
+   
+<error-page>
+        <error-code>500</error-code>
+        <location>/webapp/500</location>
+    </error-page>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/webapp/404</location>
+    </error-page>
+    
+    <error-page>  
+  <exception-type>java.lang.Exception</exception-type>  
+  <location>/error.jsp</location>  
+  </error-page>  
+    
+    
+<servlet-mapping>
+ <servlet-name>ParlamentareController</servlet-name>
+ <url-pattern>/Parlamento</url-pattern>
+</servlet-mapping>
+ 
+  <servlet>
+    <description></description>
+    <display-name>AggiugiParlamentare</display-name>
+    <servlet-name>AggiugiParlamentare</servlet-name>
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AggiugiParlamentare</servlet-name>
+    <url-pattern>/addParlamentare</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CercaParlamentareDalPartito</display-name>
+    <servlet-name>CercaParlamentareDalPartito</servlet-name>
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CercaParlamentareDalPartito</servlet-name>
+    <url-pattern>/getParlamentare3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Cerca_parlamentare_dalla_circoscrizione</display-name>
+    <servlet-name>Cerca_parlamentare_dalla_circoscrizione</servlet-name>
+    <jsp-file>/cerca_parlamentare_dalla_circoscrizione</jsp-file>
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cerca_parlamentare_dalla_circoscrizione</servlet-name>
+    <url-pattern>/cerca_parlamentare_dalla_circoscrizione</url-pattern>
+  </servlet-mapping>
+   
+  <servlet>
+    <description></description>
+    <display-name>indexcontroller</display-name>
+    <servlet-name>indexcontroller</servlet-name>
+    <servlet-class>com.giuggiola.controller.IndexController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>indexcontroller</servlet-name>
+    <url-pattern>/error2</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>simpleerrorcontroller</display-name>
+    <servlet-name>simpleerrorcontroller</servlet-name>
+    <servlet-class>com.giuggiola.controller.SimpleErrorController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>simpleerrorcontroller</servlet-name>
+    <url-pattern>/error</url-pattern>
+  </servlet-mapping>
+     
+  <!--  
+   <servlet>
+    <description></description>
+    <display-name>lista_parlamentari_circoscrizione</display-name>
+    <servlet-name>lista_parlamentari_circoscrizione</servlet-name>
+    <jsp-file>/lista_parlamentari_circoscrizione.jsp</jsp-file>
+     
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>lista_parlamentari_circoscrizione</servlet-name>
+    <url-pattern>/lista_parlamentari_circoscrizione</url-pattern>
+  </servlet-mapping>
+  -->
+  <servlet>
+  <servlet-name>jsptest</servlet-name>
+		<jsp-file>/lista_parlamentari_circoscrizione</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>jsptest</servlet-name>
+		<url-pattern>/lista_parlamentari_circoscrizione</url-pattern>
+	</servlet-mapping>	
+  <!--  
+  <servlet>
+    <description></description>
+    <display-name>error</display-name>
+    <servlet-name>error</servlet-name>
+    
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>error</servlet-name>
+    <url-pattern>/error2</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>error</display-name>
+    <servlet-name>error</servlet-name>
+  
+    <servlet-class>com.giuggiola.controller.IndexController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>error</servlet-name>
+    <url-pattern>src/main/resources/static/error</url-pattern>
+  </servlet-mapping>
+  -->
+  <servlet>
+    <description></description>
+    <display-name>Cerca_parlamentare_dal_nome</display-name>
+    <servlet-name>Cerca_parlamentare_dal_nome</servlet-name>
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cerca_parlamentare_dal_nome</servlet-name>
+    <url-pattern>/getParlamentare</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AggiornaParlamentare</display-name>
+    <servlet-name>AggiornaParlamentare</servlet-name>
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AggiornaParlamentare</servlet-name>
+    <url-pattern>/updateParlamentare</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CancellaParlamentare</display-name>
+    <servlet-name>CancellaParlamentare</servlet-name>
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CancellaParlamentare</servlet-name>
+    <url-pattern>/cancellaParlamentare</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LeggiParlamentare</display-name>
+    <servlet-name>LeggiParlamentare</servlet-name>
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LeggiParlamentare</servlet-name>
+    <url-pattern>/parlamentare/{nome}</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListaParlamentari</display-name>
+    <servlet-name>ListaParlamentari</servlet-name>
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListaParlamentari</servlet-name>
+    <url-pattern>/lista_parlamentari</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListaPeriodiCariche</display-name>
+    <servlet-name>ListaPeriodiCariche</servlet-name>
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListaPeriodiCariche</servlet-name>
+    <url-pattern>/lista_periodi_cariche</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Parlamentari</display-name>
+    <servlet-name>Parlamentari</servlet-name>
+    <servlet-class>com.giuggiola.controller.ParlamentareController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Parlamentari</servlet-name>
+    <url-pattern>/parlamentari</url-pattern>
+  </servlet-mapping>
+ 
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix" value="/webapp/" />
+<property name="suffix" value=".jsp" /> 
+</bean>
+
+</web-app>
+
+
+
+
